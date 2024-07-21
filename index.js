@@ -40,11 +40,11 @@ app.set('views','./views');
 app.use(session({
     name: 'MovieApp',
     // TODO change the secret before deployment in production mode
-    secret: 'blahsomething',
+    secret: process.env.COOKIE_SECRET,
     saveUninitialized: false,
     resave: false,
     cookie: {
-        maxAge: (1000 * 60 * 100)
+        maxAge: 1000 * 60 * 60 * 24 
     },
     store : MongoStore.create(
         {
