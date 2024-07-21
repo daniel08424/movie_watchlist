@@ -1,0 +1,42 @@
+<style>
+    .sign {
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    }
+
+.sign-in {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    z-index: 1;
+    height: 68%;
+    padding: 30px;
+    border: 1px solid aliceblue; 
+    background-color: rgba(255, 255, 255, 0.087);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+}
+
+    form{
+        display: grid;
+        gap: 40px;
+        grid-template-rows:repeat(3,50px);
+    }
+
+</style>
+<div class="sign">
+    <br>
+    <br>
+        <div class="sign-in">
+        <h1 style="color: white; padding-bottom: 30px;text-transform: uppercase;">Login</h1>
+        <div class="form">
+            <form action="/createsession" method="post" style="padding-left: 30px;">
+                <input type="email" name="email" placeholder="Enter Username" required style="width: 90%;padding-left: 20px;">
+                <input type="password" name="password" placeholder="Enter Password" required style="width: 90%;padding-left: 20px;">
+                <input type="submit" value="SignIn" style="width: 90%;">
+            </form>
+        </div>
+        <h1 style="padding-top: 30px;color: white;">If you dont have an account please <a href="http://localhost:8000/users/signup" style="color: blue;">SignUp</a></h1>
+        </div>
+</div>

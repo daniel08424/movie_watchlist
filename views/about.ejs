@@ -1,0 +1,25 @@
+<div class="about">
+    <h1 style="text-align: center; text-transform: uppercase;font-size: 30px;padding-bottom: 10px;">About</h1>
+    <p class="para">This is a movie playlist where you can find information about your favorite movies, add them to your playlist, and more.
+        This Movie playlist application is developed by using the HTML, CSS and Javascript And for the backend servers the Express.Js and the Node.Js are used. The Storage of the user details and the movies in the playlist are stored in the MongoDb server. 
+    </p>
+    <div style="padding-top: 30px;text-align: center; ">
+        <button onclick=backToHome() class="btn">Back to home</button>  
+    </div>
+</div>
+
+<script>
+    function backToHome(){
+     window.location.href = '/home';
+    }
+ </script>
+
+<div style="padding-top: 40px;position: fixed;bottom: 0;width: 100%;">
+    <footer class="footer">
+        <ul class="menu"  style="gap: 150px;">
+        
+        <li class="menu__item"><a class="menu__link" href="/home/about">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="/playlist">PlayList</a></li>
+        </ul>
+    </footer>
+  </div>

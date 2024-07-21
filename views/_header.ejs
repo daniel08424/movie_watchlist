@@ -1,0 +1,13 @@
+<div class="navbar">
+
+    <% if(locals.user){ %>
+        <ul class="nav1">
+        <li><h1><a href="http://localhost:8000/">Movie Watch</a></h1></li>
+        <li><a href="http://localhost:8000/home/profile"><%= user.name%></a></a></li> 
+        <li><a href="http://localhost:8000/home/signout">Sign Out</a></li>
+        
+        </ul>
+    <% }else{ %>
+        <h1 style="padding: 20px;text-align: center;"><a href="http://localhost:8000/" style="text-decoration: none;color: white;">Movie Watch</a></h1>
+    <%}%>
+    </div>

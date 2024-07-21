@@ -1,0 +1,55 @@
+<div class="movies-list">
+  <%if (locals.user){%>
+    <div class="movie-list"> 
+      <h1 style="text-transform: uppercase;padding-bottom: 30px;color: white;">My WatchList</h1>
+    </div>
+      <% if (movies.length === 0) { %>
+        <p style="text-align: center;">The list is empty. please search the movie and add to the list</p>
+      <% } else { %>
+        <% const sortedMovies = [...movies]; %>
+        <% sortedMovies.reverse(); %>
+        <% for (const list of sortedMovies) { %>
+          <% if (locals.user && locals.user.id === list.user.id) { %>
+            <div style="padding-bottom: 20px;">
+              <ul style="display: flex; border: 1px solid white; padding: 10px; border-radius: 10px;">
+                <li style="margin-right: 20px;">
+                    <img src="<%= list.image %>" alt="image" style="width: 170px; height: 220px;">
+                </li>
+                <li style="flex-grow: 1; padding-top: 10px;">
+                    <div style="display: grid; grid-template-columns: repeat(2,auto);justify-content: space-between;">
+                        <span style="font-size: large;align-items:start;font-weight:bolder;letter-spacing: 1px;"><%= list.movie %></span>
+                        <a href="/movies/destroy/<%= list._id %>">
+                          <i class="material-icons" style="padding-right: 50px;">delete</i>
+                        </a>
+                    </div>
+                        <span style="color:#808080;"><%= list.genre %></span>
+                        <p style="padding-top: 10px;"><%= list.description %></p>
+                </li>
+            </ul>
+        </div>
+          
+          <% } %>
+        <% } %>
+      <% } %>
+  <% } %>
+  <div style="padding-top: 20px; padding-bottom: 70px;" class="movie-list">
+      <button onclick=backToHome() class="btn">Back to home</button>  
+  </div>
+</div>
+
+<div style="padding-top: 40px;position: fixed;bottom: 0;width: 100%;">
+  <footer class="footer">
+      <ul class="menu"  style="gap: 150px;">
+
+      <li class="menu__item"><a class="menu__link" href="/home/about">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="/playlist">PlayList</a></li>
+      </ul>
+  </footer>
+</div>
+
+<script>
+   function backToHome(){
+    window.location.href = '/home';
+   }
+</script>
+

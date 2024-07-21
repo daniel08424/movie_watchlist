@@ -1,0 +1,45 @@
+<div class="individual">
+    <div class="wrap">
+        <div class="movie">
+            <img src="<%= MovieDetails.Poster %>" alt="poster">
+        </div>
+    </div>
+    <div class="infomation">
+        <div class="movie-infomation-1">
+            <h1 class="movies-title"><%= movieData.title %></h1>
+            <ul class="movies-info">
+                <li class="text"><strong>Year:</strong>  <%= movieData.year %></li>
+                <li class="text"><strong>Released:</strong>  <%= movieData.released %></li>
+                <li class="text"><strong>Country:</strong>  <%= movieData.country %></li>
+                <li class="text"><strong>Genre:</strong>  <%= movieData.genre %></li>
+                <li class="text"><strong>Runtime:</strong>  <%= movieData.runtime %></li>
+                <li class="text"><strong>Actors:</strong>  <%= movieData.actors %></li>
+                <li class="text"><strong>Writer:</strong>  <%= movieData.writer %></li>
+                <li class="text"><strong>Language:</strong>  <%= movieData.language %></li>
+                <li class="text"><strong>imdbRating:</strong>  <%= movieData.imdbRating %></li>
+                <li class="text"><strong>Plot:</strong>  <%= movieData.plot %></li>
+            </ul>
+            <br>
+            <%if(locals.user){%>
+                <form action="/movies/playlist" method="post">
+                    <input type="hidden" name="title" value="<%= movieData.title %>">
+                    <input type="hidden" name ="image" value="<%= MovieDetails.Poster %>">
+                    <input type="hidden" name="genre" value="<%= movieData.genre  %>">
+                    <input type="hidden" name="description" value="<%= movieData.plot %>">
+                    <input type="submit" value="Add To WatchList" class="palylist-button">
+                </form>
+            <%}%> 
+        </div>
+    </div>
+</div>
+
+<div style="padding-top: 70px;">
+    <footer class="footer">
+        <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="/home">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="/home/about">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="/playlist">PlayList</a></li>
+        </ul>
+    </footer>
+</div>
+

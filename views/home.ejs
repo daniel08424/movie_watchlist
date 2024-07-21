@@ -1,0 +1,38 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="contanier">
+    <main>
+        <div class="search-container">
+            <div class="title">
+                <h2 style="color: white;" >Enter Movie Name</h2>
+            </div>
+            <input type="text" placeholder="Search Movie here" id="movie-name" class="movieName" required>
+            <button id="clicked" class="search">SEARCH</button>
+            <%if(locals.user){%>
+                <button onclick= "window.location.href = 'http://localhost:8000/playlist'" class="play">WATCHLIST</button>
+          <%}%> 
+        </div>
+    </main>
+    
+    <div id="suggest" class="sugg"> 
+        <h1>Top Suggested Movies</h1>
+    </div>
+
+    <div id="result">           
+    </div>
+
+    <%if(locals.user){%>
+    <div id="add-to-playlist">
+    <%}%>
+    </div>
+
+    <div style="padding-top: 40px;">
+        <footer class="footer">
+            <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="/home">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="/home/about">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="/playlist">PlayList</a></li>
+            </ul>
+        </footer>
+    </div>
+</div>
+<script src="/scripts/script.js"></script>
